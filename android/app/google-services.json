@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "474343704340",
+    "project_id": "authneticationotp",
+    "storage_bucket": "authneticationotp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474343704340:android:c67a916f20e05d3051a401",
+        "android_client_info": {
+          "package_name": "com.example.authenticationotp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7-CYj8QnqYTjbEKS-aTT1ua9Ug1ludas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
