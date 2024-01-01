@@ -1,20 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class homenew extends StatelessWidget{
+import 'firehelper.dart';
+import 'loginnew.dart';
+
+
+
+
+class Home extends StatelessWidget {
+  // final String email;
+  //
+  // const Home({Key? key, required this.email});
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-     
-     appBar: AppBar(title: Text("Home page"),),
-     
-     body: ListView(children: [
-       
-       Text("Hai")
-     ],),
-   );
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Welcome"),
+            ElevatedButton(onPressed: () {
+              FireHelper().signOut().then((v) {
+                Get.to(LoginPage());
+              });
+            }, child: Text("SignOut"))
+          ],
+        ),
+      ),
+    );
   }
-  
-  
-  
 }
