@@ -42,7 +42,18 @@ dependencies:
   intl_phone_field:
   flutter_datetime_picker_bdaya: ^3.0.2
   date_field: ^3.0.5
-  provider: 
+  provider:
+  http:
+  cached_network_image:
+  permission_handler:
+  font_awesome_flutter:
+  internet_connection_checker:
+  top_snackbar_flutter:
+  scrollable_positioned_list:
+  dio:
+  pinput:
+  lottie:
+  device_preview:
 
 
 dev_dependencies:
