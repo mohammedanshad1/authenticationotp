@@ -43,7 +43,6 @@ dependencies:
   flutter_datetime_picker_bdaya: ^3.0.2
   date_field: ^3.0.5
   provider:
-  http:
   cached_network_image:
   permission_handler:
   font_awesome_flutter:
@@ -54,6 +53,14 @@ dependencies:
   pinput:
   lottie:
   device_preview:
+  http:
+  snackbar:
+  flutter_bloc:
+
+
+
+
+
 
 
 dev_dependencies:
