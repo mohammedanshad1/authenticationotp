@@ -1,69 +1,50 @@
-import 'dart:convert';
-
+import 'package:authenticationotp/Api4/controller/datacontroller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-import 'package:http/http.dart' as http;
+import '../controller/modelcontroller.dart';
 
-import '../modlclass/newclass.dart';
-
-void main(){
-
-  runApp(MaterialApp(home:viewscreen() ,));
-}
-class viewscreen extends StatefulWidget{
-  @override
-  State<viewscreen> createState() => _viewscreenState();
+void main() {
+  runApp(MaterialApp(
+    home: homepage(),
+  ));
 }
 
-class _viewscreenState extends State<viewscreen> {
-
-
-New _new=New();
-bool isLoading=true;
-  void fetchdata() async{
-
-    var response=await http.get(Uri.parse("https://fakestoreapi.com/users"));
-    var json=jsonDecode(response.body);
-    setState(() {
-
-      _new=New.fromJson(json);
-      isLoading=false;
-
-    });
-
-  }
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    fetchdata();
-  }
+class homepage extends StatelessWidget {
+  ///1:create instance for controller
+  final controllers = Get.put(modelcontroller());
 
   @override
   Widget build(BuildContext context) {
-  return Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Api Getx "),
+      ),
+      body: Container(
+        alignment: Alignment.center,
 
-    appBar: AppBar(title: Text("Home Page"),),
+        ///2:cretae obx
 
-body:isLoading?Center(child:CircularProgressIndicator(),):
-ListView.builder(itemBuilder: (context,index){
-  
-  
-  return Container(
-    child: Column(children: [
-      
-      Text(_new.email![index]),
-      Text(_new.username![index]),
-      Text(_new.password![index]),
-      Text(_new.phone![index])
+        child: Obx(() {
+          ///3:store data
+          var data = controllers.Modeldata.value;
+
+          ///4:display data
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(data.name??""),
+              Text(data.email??""),
+              Text(data.profession??""),
 
 
 
-    ],),
-  );
-},itemCount: _new.email!.length,)
-
-  );
+            ],
+          );
+        }),
+      ),
+    );
   }
 }
