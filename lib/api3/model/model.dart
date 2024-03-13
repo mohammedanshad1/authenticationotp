@@ -11,19 +11,19 @@ class modeldata{
 
   modeldata(
       {
-        this.id,
+         this.id,
         this.name,
         this.email,
-        this.profession});
+       this.profession});
 
   ///3: create fromjson
 
   factory modeldata.fromJson(Map<String, dynamic> json) {
     return modeldata(
-        id: json["id"],
-        name: json["name"],
-        email: json["email"],
-        profession: json["profession"]);
+        id: json["id"]??.0,
+        name: json["name"]??"",
+        email: json["email"]??"",
+        profession: json["profession"]??"");
 
   }
 

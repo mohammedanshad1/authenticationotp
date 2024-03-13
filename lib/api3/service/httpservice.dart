@@ -8,12 +8,12 @@ import '../model/model.dart';
 class httpservice {
   ///1:Get url
 
-  var url = "https://fluttmac.github.io/api/user.json";
+  var urls = "https://fluttmac.github.io/api/user.json";
 
   ///2:create get function
 
   Future<modeldata?> fetchdatas() async {
-    var response = await http.get(Uri.parse(url));
+    var response = await http.get(Uri.parse(urls));
 
     ///3: check condition
     if (response.statusCode == 200) {

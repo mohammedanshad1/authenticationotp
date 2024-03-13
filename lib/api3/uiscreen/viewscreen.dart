@@ -7,7 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import '../controller/modelcontroller.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(GetMaterialApp(
     home: homepage(),
   ));
 }
@@ -35,9 +35,9 @@ class homepage extends StatelessWidget {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(data.name??""),
-              Text(data.email??""),
-              Text(data.profession??""),
+              Text(data.id.toString()),
+              Text(data.email.toString()),
+              Text(data.profession.toString()),
 
 
 
